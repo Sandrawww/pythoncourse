@@ -35,9 +35,11 @@ def exercise02():
 
     # ------ Place code below here \/ \/ \/ ------
 
+    animals = ['cat','dog','crouching tiger','hidden dragon','manta ray']
     for i in range(len(animals)):
         print(animals[i])
     len_animals = len(animals)
+
     # ------ Place code above here /\ /\ /\ ------
 
     return animals, len_animals
@@ -50,6 +52,8 @@ def exercise03():
 
     # ------ Place code below here \/ \/ \/ ------
 
+    countdown.sort(reverse=True)
+    the_fifth_element = countdown[4]
 
     # ------ Place code above here /\ /\ /\ ------
 
@@ -73,7 +77,13 @@ def exercise04(more_temperatures, iot_sensor_points, a, b, c, d, e):
 
     # ------ Place code below here \/ \/ \/ ------
 
-
+    temperatures = temperatures.extend(more_temperatures)
+    temperatures = temperatures.extend(iot_sensor_points.values())
+    temperatures = temperatures.extend([a,b,c,d,e])
+    temperatures.sort(reverse=True)
+    samples = temperatures[4::5]
+    copy_of_samples = samples.copy()
+    samples.sort()
 
     # ------ Place code above here /\ /\ /\ ------
 
@@ -85,7 +95,10 @@ def exercise05(n):
 
     # ------ Place code below here \/ \/ \/ ------
 
-    pass # Remove this line
+    if n == 1:
+        return n
+    else:
+        return n*exercise05(n-1)
 
     # ------ Place code above here /\ /\ /\ ------
 
@@ -95,6 +108,9 @@ def exercise06(n):
 
     # ------ Place code below here \/ \/ \/ ------
 
+    length_n = len(n) 
+    sum_n = sum(n) 
+    average_n = sum(n)/len(n)
 
     # ------ Place code above here /\ /\ /\ ------
     return length_n, sum_n, average_n
@@ -104,7 +120,13 @@ def exercise07(n):
     # This function looks for duplicates in list n. If there is a duplicate False is returned. If there are no duplicates True is returned.
 
     # ------ Place code below here \/ \/ \/ ------
-
+    hash_set = set()
+    for ele in n:
+        if ele not in hash_set:
+            hash_set.add(ele)
+        else:
+            return False
+    return True
 
     # ------ Place code above here /\ /\ /\ ------
 
@@ -128,7 +150,7 @@ def exercise07(n):
 def exercise09():
     # Compile a list of 10 random URLs of dog pics
 
-    dogs = []
+    dogs = ["00186969-c51d-462b-948b-30a7e1735908.jpg","00564ba3-e5cb-4b2b-8d97-c65a9ef26c23.png","00b417af-0b5f-42d7-9ad0-6aab6c3db491.jpg","01289c3d-5668-45b9-8c32-42eb9135e04c.mp4","027eef85-ccc1-4a66-8967-5d74f34c8bb4.jpg","03024628-188b-408e-a853-d97c9f04f903.jpg","037c01a0-99b3-4757-90b5-04df9be427a6.JPG","0415ca3e-0e99-4afa-bec6-bd8a4a7ff6ff.PNG","046e5758-d1ef-436f-b7e2-530134562445.jpg","054800b7-4ed5-411e-bca2-c06e8404a3d2.mp4"]
     url = 'https://random.dog/woof.json'
     dog_media = r.get(url=url)
     print(str(dog_media.content))
@@ -147,8 +169,20 @@ def exercise10(sentence):
     reversed = ''
 
     # ------ Place code below here \/ \/ \/ ------
-    
+            #     self.assertEqual(exercise10('HellO'),'oLLEh')
+        # self.assertEqual(exercise10('ThIs Is MaD'),'dAm_Si_SiHt')
 
+    temp = list(sentence[::-1])
+    print(temp)
+    for i in range(len(temp)):
+        if temp[i].isupper():
+            temp[i] = temp[i].lower()
+        elif temp[i].islower():
+            temp[i] = temp[i].upper()
+        elif temp[i] == ' ':
+            temp[i] = '_'
+
+    reversed = ''.join(temp)
 
     # ------ Place code above here /\ /\ /\ ------
     return reversed
