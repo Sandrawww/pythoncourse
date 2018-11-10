@@ -22,8 +22,9 @@ def exercise01():
     # Create a list called animals containing the following animals: cat, dog, crouching tiger, hidden dragon, manta ray
 
     # ------ Place code below here \/ \/ \/ ------
-
-
+    
+    animals = ['cat','dog','crouching tiger','hidden dragon','manta ray']
+    
     # ------ Place code above here /\ /\ /\ ------
 
     return animals
@@ -33,8 +34,11 @@ def exercise02():
     # Repeat exercise 1 and loop through and print each item in the animal list by iterating through an index number and using range(). Set the variable len_animals to the length of the animal list.
 
     # ------ Place code below here \/ \/ \/ ------
-
-
+    
+    for i in range(len(animals)):
+        print(animals[i])
+    len_animals = len(animals)
+    
     # ------ Place code above here /\ /\ /\ ------
 
     return animals, len_animals
@@ -46,7 +50,8 @@ def exercise03():
     the_fifth_element = -999
 
     # ------ Place code below here \/ \/ \/ ------
-
+    countdown.sort(reverse=True)
+    the_fifth_element = countdown[4]
 
     # ------ Place code above here /\ /\ /\ ------
 
@@ -69,7 +74,13 @@ def exercise04(more_temperatures, iot_sensor_points, a, b, c, d, e):
     copy_of_samples = []
 
     # ------ Place code below here \/ \/ \/ ------
-
+    temperatures = temperatures.extend(more_temperatures)
+    temperatures = temperatures.extend(iot_sensor_points.values())
+    temperatures = temperatures.extend([a,b,c,d,e])
+    temperatures.sort(reverse=True)
+    samples = temperatures[4::5]
+    copy_of_samples = samples.copy()
+    samples.sort()
 
 
     # ------ Place code above here /\ /\ /\ ------
@@ -82,7 +93,10 @@ def exercise05(n):
 
     # ------ Place code below here \/ \/ \/ ------
 
-    pass # Remove this line
+    if n == 1:
+        return n
+    else:
+        return n*exercise05(n-1)
 
     # ------ Place code above here /\ /\ /\ ------
 
@@ -91,7 +105,9 @@ def exercise06(n):
      # This function will receive an arbitrary list of numbers of arbitrary size and find the average of those numbers. The size of the list may vary. Find the method that requires the  least amount of code. Return back the length, sum of list and average of list
 
     # ------ Place code below here \/ \/ \/ ------
-
+    length_n = len(n) 
+    sum_n = sum(n) 
+    average_n = sum(n)/len(n)
 
     # ------ Place code above here /\ /\ /\ ------
     return length_n, sum_n, average_n
@@ -101,7 +117,15 @@ def exercise07(n):
     # This function looks for duplicates in list n. If there is a duplicate False is returned. If there are no duplicates True is returned.
 
     # ------ Place code below here \/ \/ \/ ------
+    new_n = sorted(set(n))
+    dup_list =[]
 
+    for i in range(len(new_n)):
+        if (n.count(new_list[i]) > 1 ):
+            return False
+        else:
+            return True
+                
 
     # ------ Place code above here /\ /\ /\ ------
 
