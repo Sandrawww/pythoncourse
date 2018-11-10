@@ -22,7 +22,7 @@ def exercise01():
     # Create a list called animals containing the following animals: cat, dog, crouching tiger, hidden dragon, manta ray
 
     # ------ Place code below here \/ \/ \/ ------
-    
+
     animals = ['cat','dog','crouching tiger','hidden dragon','manta ray']
 
     # ------ Place code above here /\ /\ /\ ------
@@ -35,7 +35,9 @@ def exercise02():
 
     # ------ Place code below here \/ \/ \/ ------
 
-
+    for i in range(len(animals)):
+        print(animals[i])
+    len_animals = len(animals)
     # ------ Place code above here /\ /\ /\ ------
 
     return animals, len_animals
