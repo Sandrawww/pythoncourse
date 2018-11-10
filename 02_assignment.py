@@ -78,9 +78,9 @@ def exercise04(more_temperatures, iot_sensor_points, a, b, c, d, e):
 
     # ------ Place code below here \/ \/ \/ ------
 
-    temperatures = temperatures.extend(more_temperatures)
-    temperatures = temperatures.extend(iot_sensor_points.values())
-    temperatures = temperatures.extend([a,b,c,d,e])
+    temperatures.extend(more_temperatures)
+    temperatures.extend(list(iot_sensor_points.values()))
+    temperatures.extend([a,b,c,d,e])
     temperatures.sort(reverse=True)
     samples = temperatures[4::5]
     copy_of_samples = samples.copy()
