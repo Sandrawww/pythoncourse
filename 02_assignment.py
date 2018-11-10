@@ -22,7 +22,8 @@ def exercise01():
     # Create a list called animals containing the following animals: cat, dog, crouching tiger, hidden dragon, manta ray
 
     # ------ Place code below here \/ \/ \/ ------
-
+    
+    animals = ['cat','dog','crouching tiger','hidden dragon','manta ray']
 
     # ------ Place code above here /\ /\ /\ ------
 
