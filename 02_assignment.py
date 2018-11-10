@@ -17,6 +17,7 @@ import math
 import unittest
 import numpy as np
 import requests as r
+import json as js
 
 def exercise01():
     # Create a list called animals containing the following animals: cat, dog, crouching tiger, hidden dragon, manta ray
@@ -150,13 +151,17 @@ def exercise07(n):
 def exercise09():
     # Compile a list of 10 random URLs of dog pics
 
-    dogs = ["00186969-c51d-462b-948b-30a7e1735908.jpg","00564ba3-e5cb-4b2b-8d97-c65a9ef26c23.png","00b417af-0b5f-42d7-9ad0-6aab6c3db491.jpg","01289c3d-5668-45b9-8c32-42eb9135e04c.mp4","027eef85-ccc1-4a66-8967-5d74f34c8bb4.jpg","03024628-188b-408e-a853-d97c9f04f903.jpg","037c01a0-99b3-4757-90b5-04df9be427a6.JPG","0415ca3e-0e99-4afa-bec6-bd8a4a7ff6ff.PNG","046e5758-d1ef-436f-b7e2-530134562445.jpg","054800b7-4ed5-411e-bca2-c06e8404a3d2.mp4"]
+    dogs = []
     url = 'https://random.dog/woof.json'
     dog_media = r.get(url=url)
     print(str(dog_media.content))
     
     # ------ Place code below here \/ \/ \/ ------
     
+    urls = js.loads(dog_media.content)['url']
+    urls = urls.split(',')
+    
+    return urls
 
 
     # ------ Place code above here /\ /\ /\ ------
