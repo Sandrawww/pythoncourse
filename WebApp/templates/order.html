@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Farmer Trader Order</title>
+
+    <link href="{{ url_for('static',filename='dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='assets/css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='starter-template.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static',filename='assets/js/ie-emulation-modes-warning.js') }}"></script>
+
+  </head>
+
+	<body>
+
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="/">Home Page</a></li>
+                <li><a href="/order">Order Management </a></li>
+                <li><a href="/tracking">Tracking</a></li>
+                <li><a href="/history">History</a></li>
+            </div>
+          </div>
+        </nav>
+
+
+		<div id="divBottom"></div>
+    <div id="remainingTime"></div>
+    <div class="starter-template">
+        <h1>WELCOME!</h1>
+        <p class="lead">Farmer's Cryptocurrency Trading System</p>
+        <p class="lead">Click "Pay"!</p>
+
+		<form action="/process" method="post" >
+      <input name="Quantity" id="number" type="number" required="required" placeholder="How many?"></input><br> 
+			<select name="product" id="product">
+			  <option value="btc">Bitcoin</option>
+			  <option value="eth">Ethereum</option>
+			  <option value="ltc">Litecoin</option>
+      </select>
+      <select name="buysell">
+          <option value="class1">Buy</option>
+          <option value="class2">Sell</option>
+        </select>
+      <br>
+      <button class="but" type="submit">CHECKOUT</button> 
+    </form>
+    
+    <h3>Developer Contact</h3>
+    <h4>Suruo Wang & Jingjing Guan</h4>
+    <h5><Email:farmertrader@gmail class="com">Email:farmertrader@gmail</h5>
+    <p class="lead">Email me if you are broke.</p>
+  </div>
+
+</body>
+</html>

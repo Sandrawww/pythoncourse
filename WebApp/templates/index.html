@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />  
+    <meta http-equiv="Content-Language" content="zh-CN" />  
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>FarmerTrader</title>
+
+    <link href="{{ url_for('static',filename='dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='assets/css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='starter-template.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static',filename='assets/js/ie-emulation-modes-warning.js') }}"></script>
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a class="/" href="#">Home Page</a></li>
+            <li><a href="/order">Order Management </a></li>
+            <li><a href="/tracking">Tracking</a></li>
+            <li><a href="/history">History</a></li>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>Farmer Trader</h1>
+        <p class="lead">Farmer's Cryptocurrency Trading System</p>
+        <p class="lead">Click "SIGN IN"!</p>
+
+        <form id='signin', action='signin'>  
+            <input type="text" required="required" placeholder="Username" name="u"></input>  
+            <input type="password" required="required" placeholder="Password" name="p"></input>  
+            <button class="but" type="submit">Sign In</button>  
+        </form>  
+
+        
+        <!-- <p class="lead">To Read the mamual before playing is advised.</p> -->
+      
+        <h3>Developer Contact</h3>
+        <h4>Suruo Wang & Jingjing Guan</h4>
+        <h5><Email:farmertrader@gmail class="com">Email:farmertrader@gmail</h5>
+        <p class="lead">Email me if you are broke.</p>
+      </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
